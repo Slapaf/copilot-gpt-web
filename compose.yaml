@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  # backend
+  copilot-gpt4-service:
+    build:
+      context: ./copilot-gpt4-service
+      dockerfile: ./copilot-gpt4-service/Dockerfile
+    image: copilot-gpt4-service
+    container_name: copilot-gpt4-service
+    ports:
+      - "8080:8080"
+
+  # frontend
+  chatgpt-next-web:
+    build:
+      context: ./chatgpt-next-web
+      dockerfile: ./chatgpt-next-web/Dockerfile
+    image: chatgpt-next-web
+    container_name: chatgpt-next-web
+    ports:
+      - "3000:3000"
+    environment:
+      - PROXY_URL=http://127.0.0.1:7890
+      - OPENAI_API_KEY=<YOUR_API_KEY> # ! replace with your api key

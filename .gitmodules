@@ -1,0 +1,6 @@
+[submodule "copilot-gpt4-service"]
+	path = copilot-gpt4-service
+	url = https://github.com/aaamoon/copilot-gpt4-service.git
+[submodule "ChatGPT-Next-Web"]
+	path = ChatGPT-Next-Web
+	url = https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web.git
